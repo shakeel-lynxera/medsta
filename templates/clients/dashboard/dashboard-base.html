@@ -1,0 +1,239 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Medsta | {% block title %}{% endblock %}</title>
+      <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+      <link rel="stylesheet" href="{% static 'assets/plugin/fontawesome/css/all.css' %}"%>
+      <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+      <!-- Material Design Bootstrap -->
+      <link rel="stylesheet" href="{% static 'assets/css/mdb.min.css' %}">
+      <!-- Your custom styles (optional) -->
+      <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/query.css' %}">
+
+      {% block header_cdn %}{% endblock %}
+   </head>
+   <body class="body">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top border navbarbg py-sm-0 py-md-0 py-2">
+         <a class="navbar-brand offset-1 ml-4" href="#"> 
+         <img src=" {% static 'assets/images/logo.png' %}" class="img-fluid" alt=""> 
+         </a>
+         <form>
+            <div class="md-form md-outline input-with-pre-icon m-0">
+               <i class="fa fa-search  input-prefix text-black pl-2"></i>
+               <input type="text" placeholder="Search" class="form-control border rounded-pill">
+            </div>
+         </form>
+         <!-- Collapse button -->
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+         aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse align-items-center navbar-links" id="basicExampleNav">
+            <ul class="navbar-nav justify-content-space-evenly ml-md-4 align-items-center mt-1 w-100">
+               <li class="nav-item active mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-home fa-lg">
+                     </i>
+                     <div class="menutext">Home</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-envelope fa-lg">
+                     </i
+                        >
+                     <div class="menutext">Mail</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="/cv/"
+                     >
+                     <i class="fas fa-id-card-alt fa-lg">
+                        </i
+                        >
+                        <div class="menutext">Create a CV</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-money-check fa-lg">
+                     </i>
+                        <div class="menutext">Book Now</div>
+                        
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="/network/"
+                     >
+                     <i class="fas fa-network-wired fa-lg">
+                        </i
+                        >
+                        <div class="menutext">My Network</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-briefcase fa-lg">
+                        </i
+                        >
+                        <div class="menutext">Jobs</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-comment-dots fa-lg">
+                        </i
+                        >
+                        <div class="menutext">Messaging</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-bell fa-lg">
+                        </i
+                        >
+                        <div class="menutext">Notification</div>
+                  </a>
+               </li>
+               <li class="nav-item dropdown mr-3">
+                  <a class="nav-link dropdown-toggle" style="padding-top: 2px !important" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <div class="text-center">
+                        <img
+                           src="https://media-exp1.licdn.com/dms/image/C4D03AQFpMjVJ_N2wRQ/profile-displayphoto-shrink_100_100/0/1582787654653?e=1616630400&v=beta&t=C1X2NxhcN0R0GmELl1Ew7BeOoyGbwJXCw8c7lHm6XuA"
+                           style="
+                           border-radius: 50%;
+                           width: 20px;
+                           height: 20px;
+                           "
+                           class="img-fluid"
+                           />
+                     </div>
+                     <span
+                        class="menutext">
+                     Ben
+                     </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="#">Action</a>
+                     <a class="dropdown-item" href="#">Another action</a>
+                     <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+               </li>
+               <li class="nav-item border-left">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-bars fa-lg">
+                     </i
+                        >
+                     <div class="dropdown-toggle menutext p-0 m-0" role="button" id="navbarDropdownMenuLink1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" style="font-weight: 600;">Tools</div>
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-cogs fa-lg">
+                        </i
+                        >
+                        <div class="menutext">Post a Job</div>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+
+      <div class="whole-body pb-3">
+         <!-- adds-content -->
+         
+         <div class="container-fluid py-3">
+            <div class="row justify-content-center">
+               <div class="col-lg-7 col-md-10 col-sm-10 text-center">
+                  {% block content-ads %}{% endblock %}
+               </div>
+            </div>
+         </div>
+         <div class="container-fluid">
+            <div class="row justify-content-center">
+               <div class="col-lg-10 col-md-11 col-sm-11">
+                  <div class="row">
+                     <!-- side panel -->
+                     <div class="col-sm-4 col-md-3 pl-md-0">
+                        {% block content-left-side %}{% endblock %}
+                        <!-- sol panel -->
+                     </div>
+                     <!-- center panel -->
+                     <div class="col-sm-8 col-md-6 mt-3 mt-sm-0 mt-md-0">
+                        {% block content-center %}{% endblock %}
+                     </div>
+                     <!-- right panel -->
+                     <div class="col-sm-6 col-md-3 pr-0 mt-3 mt-sm-3 mt-md-0">
+                        {% block content-right-side %}{% endblock %}
+                     </div>
+
+                  </div>
+                  <div class="row">
+                     
+                     <div class="col-sm-4 col-md-3 pl-md-0">
+                        {% block option-2-content-left-side %}{% endblock %}
+                        <!-- sol panel -->
+                     </div>
+
+                     <div class="col-sm-10 col-md-8 mt-3 mt-sm-0 mt-md-0">
+                        {% block option-2-content-full %}{% endblock %}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      {% comment %} position-sticky {% endcomment %}
+      <nav class="bottom-chat navbar navbar-expand-xl navbar-light fixed-bottom border bg-white">
+         <a class="navbar-brand" href="#"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQFpMjVJ_N2wRQ/profile-displayphoto-shrink_100_100/0/1582787654653?e=1616630400&amp;v=beta&amp;t=C1X2NxhcN0R0GmELl1Ew7BeOoyGbwJXCw8c7lHm6XuA" class="bottom-chat-img"></a>
+         <span style="font-size: 14px; font-weight: bold; font-family:Arial, Helvetica, sans-serif;"><strong>Kamal</strong></span>
+         <div class="float-right d-flex justify-content-end w-100">
+            <span><i class="fas fa-edit fa-sm ml-3"></i></span>
+            <span><i class="fas fa-ellipsis-h fa-sm ml-3"></i></span>
+            <span><i class="fas fa-chevron-up fa-sm ml-3"></i></span>
+         </div>
+       </nav>
+
+
+      <!-- jQuery -->
+      <script type="text/javascript" src="{% static 'assets/js/jquery.min.js' %}"></script>
+      <!-- Bootstrap tooltips -->
+      <script type="text/javascript" src="{% static 'assets/js/popper.min.js' %}"></script>
+      <!-- Bootstrap core JavaScript -->
+      <script type="text/javascript" src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+      <!-- MDB core JavaScript -->
+      <script type="text/javascript" src="{% static 'assets/js/mdb.min.js' %}"></script>
+      <!-- Your custom scripts (optional) -->
+      <script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+
+      <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+         <!-- Initialize Swiper -->
+      <script>
+         var swiper = new Swiper('.swiper-container', {
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 3,
+         });
+      </script>
+   </body>
+</html>

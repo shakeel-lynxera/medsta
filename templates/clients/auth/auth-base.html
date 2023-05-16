@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Medsta | {% block title %}{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/custom_style.css' %}">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+        {% block header_cdn %}{% endblock %}
+    </head>
+    <body>
+    <div id="page-loader">
+        <img id="loading-image" class="img-fluid" src="{% static 'images/medsta/cube-loader2.gif' %}" alt="Loading...">
+    </div>
+        {% if error %}
+    <div class="alert alert-danger alert-dismissible d-flex align-items-center fade show m-4">
+        <i class="bi-exclamation-octagon-fill"></i>
+        <strong class="mx-2">Failed!</strong> {{error}}.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    {% endif %}
+
+    {% if server_error %}
+    <div class="m-4">
+        <div class="alert alert-danger alert-dismissible fade show">
+            <h4 class="alert-heading"><i class="bi-exclamation-octagon-fill"></i> Oops! Something went wrong.</h4>
+            <p>Please enter a valid value in all the required fields before proceeding or try again later.</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+    {% endif %}
+
+        <div class="container-fluid">
+            <div class="card card0 border-0">
+                <div class="row d-flex">
+                    <div class="col-lg-6">
+                        <div class="col-lg-4">
+                            <div class="row pb-5"> <img src="{% static 'images/medsta/logo.png' %}" class="img-fluid"> </div>
+                        </div>
+                        {% block side_image %}{% endblock %}
+                    </div>
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    <script>
+            window.onload = function(){
+                 document.getElementById("page-loader").style.display = "none" 
+                 }
+    </script>
+
+    {% block script_js %}{% endblock %}
+    </body>
+</html>

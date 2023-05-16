@@ -1,0 +1,596 @@
+{% extends 'clients/dashboard/dashboard-base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content-ads %}
+    <img src="{% static 'assets/images/ad.png' %}" class="img-fluid w-100" alt="">
+{% endblock %}
+
+{% block content-left-side %}
+    <div class="card">
+        <div
+            class="card-header text-center"
+            style="
+            background-image: url(https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fblogs-images.forbes.com%2Falejandrocremades%2Ffiles%2F2018%2F12%2Fbusiness-3605367_1920-1200x741.jpg);
+            height: 70px;
+            "
+            >
+            <img
+                src="https://www.tolookgood.com/wp-content/uploads/sites/15/2017/05/botox-men-2-300x281.jpg"
+                class=""
+                style="
+                border-radius: 50%;
+                border: 2px solid white;
+                width: 70px;
+                height: 70px;
+                margin-top: 20px;
+                "
+                />
+        </div>
+        <div class="card-body">
+            <p class="card-title text-center mt-4 header user_full_name">
+                <a href="#" target="_blank" style="color: #212529;">{{ user.profile.full_name }}</a>
+            </p>
+            <div class="profile-info">
+                {% if request.user.profile.title %}
+                {{request.user.profile.title}}
+                {% endif %}
+            </div>
+            <div class="profile-info">
+                <a href="/profile/" class="link-secondary">
+                    <p><span class="fa fa-eye text-info"></span> View Profile</p>
+                </a>
+            </div>
+            <div class="view">
+                <h6><small>Profile completion 50%</small></h6>
+            <div class="progress" style="height: 5px;">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <div class="mt-2 view">
+                <a href="#" class="link-secondary">
+                    <p><span class="fa fa-plus text-info"></span> Add Experience</p>
+                </a>
+                <a href="#" class="link-secondary">
+                    <p><span class="fa fa-plus text-info"></span> Add Skills</p>
+                </a>
+                <a href="#" class="link-secondary">
+                    <p><span class="fa fa-plus text-info"></span> Add Certificate</p>
+                </a>
+            </div>
+                
+            </div>
+            <hr />
+            <div class="card-text">
+                <div class="d-flex justify-content-between m-0 w-100">
+                <div class="view">Who viewed your profile</div>
+                <div class="view mt-1" style="color: #34b22a"
+                    >447</div>
+                </div>
+                <div class="d-flex justify-content-between m-0 w-100">
+                <div class="view">View of your post </div
+                    >
+                <div class="view mt-1" style="color: #34b22a"
+                    >150</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="profile-info mb-0 pt-2">
+                Access Exclusive tools & insights
+            </div>
+            <i class="fas fa-bookmark mr-2 text-info"></i>
+            <span class="mb-4" style="font-size: 12px; font-weight: bold">Try Premium Free for 1 Month</span>
+        </div>
+        <div class="card-footer bg-white">
+            <i class="fas fa-bookmark mr-2 text-info"></i>
+            <span class="mb-4" style="font-size: 12px; font-weight: bold">My Items</span>
+        </div>
+    </div>
+
+    <div class="card mt-2" style="position: sticky; top: 4rem; overflow: visible">
+        <div
+            class="card-header bg-white border-0"
+            style="margin-bottom: -22px; font-size: 12px"
+            >
+            Recent
+        </div>
+        <div class="card-body pb-2">
+            <div class="card-title mb-0">
+                <div>
+                <i
+                    class="fas fa-hashtag recent-i"
+                    ></i
+                    ><span
+                    class="ml-2 font-weight-bold recent-text"
+                    >kodluyoruz</span
+                    >
+                </div>
+                <div>
+                <i
+                    class="fas fa-hashtag recent-i"
+                    ></i
+                    ><span
+                    class="ml-2 font-weight-bold recent-text"
+                    >front-end</span
+                    >
+                </div>
+                <div>
+                <i
+                    class="fas fa-hashtag recent-i"
+                    ></i
+                    ><span
+                    class="ml-2 font-weight-bold recent-text"
+                    >html</span
+                    >
+                </div>
+                <div>
+                <i
+                    class="fas fa-hashtag recent-i"
+                    ></i
+                    ><span
+                    class="ml-2 font-weight-bold recent-text"
+                    >css</span
+                    >
+                </div>
+                <div>
+                <i
+                    class="fas fa-hashtag recent-i"
+                    ></i
+                    ><span
+                    class="ml-2 font-weight-bold recent-text"
+                    >bootstrap</span
+                    >
+                </div>
+            </div>
+        </div>
+        <div
+            class="card-footer bg-white discover-more">
+            Discover More
+        </div>
+    </div>
+{% endblock %}
+
+{% block content-center %}
+    <!-- post -->
+    <div class="card">
+        <div class="card-body">
+            
+        <form action="/posts/upload-post/" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <textarea name="description" class="form-control rounded-0" placeholder="Share your thinking ..." id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            
+            <div class="d-flex justify-content-between pt-2">
+                <div class="mediatext post-feature py-2 btn-sm">
+                    <i class="fa fa-image text-photo"></i>
+                    <span class="ml-1 mediatext">Photo</span>
+                </div>
+            
+            
+                <div class="mediatext post-feature py-2 ml-lg-4">
+                    <i class="fa fa-image text-video"></i>
+                    <span class="ml-1 mediatext">Video</span>
+                </div>
+            
+            
+                <div class="mediatext  post-feature py-2 ml-lg-4">
+                    <i class="fa fa-image calendar-week text-warning"></i>
+                    <span class="ml-1 mediatext">Event</span>
+                </div>
+        
+        
+                <div class="mediatext post-feature py-2 ml-lg-2">
+                    <i class="fa fa-image chart-bar text-danger"></i>
+                    <span class="ml-1 mediatext">Write Article</span>
+                </div>
+            </div>
+            <div class="submit-post mt-3 float-right">
+                <button type="submit" class="btn btn-primary btn-sm">Post</button>
+            </div>
+        </form>
+        
+        </div>
+    </div>
+
+    <!-- sort-by -->
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-10 col-sm-9 col-8">
+                <hr />
+            </div>
+            <div class="col-md-2 pl-0 col-sm-3 col-4">
+            <!-- Basic dropdown -->
+            <p class="dropdown-toggle sort-by mb-0" type="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Sort By : Top</p>
+
+            <div class="dropdown-menu sort-by-drop">
+            <a class="dropdown-item active" href="#">Top</a>
+            <a class="dropdown-item" href="#">Recent</a>
+            </div>
+            <!-- Basic dropdown -->
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- feed -->
+    {% for post in posts %}
+        <div class="card mt-3">
+            <div class="card-header bg-white border-0">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-1 col-sm-1 col-2 px-0 text-left">
+                            <img src="https://www.tolookgood.com/wp-content/uploads/sites/15/2017/05/botox-men-2-300x281.jpg"
+                             style="border-radius: 50%; width: 50px; height: 50px;" class="img-fluid">
+                        </div>
+                        <div class="col-md-10 col-sm-9 col-9">
+                            <div class="align-top post-user-title">{{post.user.profile.full_name}}<span class="text-muted">• 1st</span>
+                            <div class="align-middle post-user-job">{{post.user.profile.title}}</div>
+                            <div class="align-bottom post-series">{{post.created_at}} • New Post • <i class="fas fa-globe-americas fa-sm"></i></div>
+                        </div>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-1 pr-0 text-right">
+                            <i class="fa fa-ellipsis-h fa-md"></i>
+                        </div>
+                    </div>
+                </div>
+            
+                
+            </div>
+            <div>
+                <div id="module" class="pb-3">
+                    <p class="collapse card-text mx-2 post-of-user" id="collapseExample" aria-expanded="false">
+                        {{post.description}}
+                    </p>
+                </div>
+                <div class="no-of-reactions">
+                    <span class="ml-3">
+                        <img src="https://static-exp1.licdn.com/sc/h/d310t2g24pvdy4pt1jkedo4yb" alt="">
+                    </span>
+                
+                    <span style="font-size: 11px; color: #474747;">
+                    <img src="https://static-exp1.licdn.com/sc/h/54ivsuv8nxk12frsw45evxn3r" alt="">
+                    <span class="pl-1">78 • 26 comments</span> 
+                </span>
+                </div>
+                <!-- auto-comment-box -->
+                <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- Swiper -->
+                    <div class="swiper-container py-2">
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- like-comment-share -->
+                <div class="card-footer bg-white mt-0 p-2">
+
+                <div class="d-flex justify-content-start">
+                    <div class="ref reaction btn-sm py-2">
+                        <i class="far fa-thumbs-up fa-md"></i><span class="ml-2 mediatext">Like</span>
+                    </div>
+                    <div class="ref reaction btn-sm py-2">
+                        <i class="far fa-comment fa-md"></i><span class="ml-2 mediatext">Comment</span>
+                    </div>
+            
+                    <div class="ref reaction btn-sm py-2">
+                        <i class="fas fa-share fa-md" ></i><span class="ml-2 mediatext">Share</span>
+                    </div>
+                    <div class="ref  reaction btn-sm py-2">
+                        <i class="fas fa-paper-plane fa-md"></i><span class="ml-2 mediatext">Send</span>
+                    </div>
+                </div>
+            
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <!-- recommendations -->
+    <div class="card mt-3">
+        <div class="container-fluid">
+            <div class="row py-2">
+                <div class="col-md-6 col-sm-8 col-8 recommended">
+                <p class="mb-0 text-muted">Job recommended for you</p>
+                </div>
+                <div class="col-md-6 col-sm-4 col-4 text-right">
+                <i class="fa fa-ellipsis-h fa-md"></i>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-md-2 col-sm-3 col-3">
+                <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQGfVDjt7td-Xw/company-logo_100_100/0/1519888779161?e=1620259200&amp;v=beta&amp;t=evmYY0Pfa_NJjaOOqanQxgt39zJ19SHWCcvi1whkwgw" class="img-fluid rounded" style="width: 50px;">
+            </div>
+            <div class="col-md-9 pl-0 col-sm-9 col-9">
+                <p class="header ml-1 feed-option mb-0">Business Developement Management</p>
+                <p class="ml-1 feed-option-desc mb-0 text-muted">HR Ways - We're hiring - Lahore District Punjab Pakistan</p>
+            </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-md-2 col-sm-3 col-3">
+                <img src="https://media-exp1.licdn.com/dms/image/C560BAQEWL3x6YrK4TQ/company-logo_100_100/0/1612473028270?e=1620864000&v=beta&t=uYkXzdP78L4o5nbXEi0kMcZEr8EIE5ItD9bQnVV5yBI" class="img-fluid rounded" style="width: 50px;">
+            </div>
+            <div class="col-md-9 pl-0 col-sm-9 col-9">
+                <p class="header ml-1 feed-option mb-0">Business Developement Executive</p>
+                <p class="ml-1 feed-option-desc mb-0 text-muted">HR Ways - We're hiring - Lahore District Punjab Pakistan</p>
+            </div>
+            </div>
+            <div class="row pb-3 border-top">
+                <div class="col-md-12 text-center">
+                <div class="card-footer bg-white discover-more">
+                    <a href="#">See More</a> 
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- feed -->
+    <div class="card mt-3">
+        <div class="card-header bg-white border-0">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-1 col-sm-1 col-2 px-0 text-left">
+                        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEq7HNPXtEvvw/profile-displayphoto-shrink_200_200/0/1596227507685?e=1617235200&v=beta&t=Br4sHpegbSSX-GR1RnrEqRrZxTr55k3R80qTImOV0i0" style="border-radius: 50%; width: 50px; height: 50px;" class="img-fluid">
+                    </div>
+                    <div class="col-md-10 col-sm-9 col-9">
+                        <div class="align-top post-user-title">rumaisa viqas <span class="text-muted">• 1st</span>
+                        <div class="align-middle post-user-job">Content Writer</div>
+                        <div class="align-bottom post-series">1d • Edited • <i class="fas fa-globe-americas fa-sm"></i></div>
+                    </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-1 pr-0 text-right">
+                        <i class="fa fa-ellipsis-h fa-md"></i>
+                    </div>
+                </div>
+            </div>
+        
+            
+        </div>
+        <div>
+            <div id="module" class="pb-3">
+            
+                <p class="collapse card-text mx-2 post-of-user" id="collapseExample" aria-expanded="false">
+                Bacon ipsum dolor amet doner picanha tri-tip biltong leberkas salami meatball tongue filet mignon landjaeger tail. Kielbasa salami tenderloin picanha spare ribs, beef ribs strip steak jerky cow. Pork chop chicken ham hock beef ribs turkey jerky shoulder . <br> <br>
+                beef capicola doner, tongue tail sausage short ribs andouille. Rump frankfurter landjaeger t-bone, kielbasa doner ham hock shankle venison. Cupim capicola kielbasa t-bone, ball tip chicken andouille venison pork chop doner bacon beef ribs kevin shankle.
+                Short loin leberkas tenderloin ground round shank, brisket strip steak ham hock ham.
+                </p>
+                <a role="button" class="collapsed text-muted float-right see-more-btn" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
+            </div>
+            <div class="no-of-reactions">
+                <span class="ml-3">
+                    <img src="https://static-exp1.licdn.com/sc/h/d310t2g24pvdy4pt1jkedo4yb" alt="">
+                </span>
+            
+                <span style="font-size: 11px; color: #474747;">
+                <img src="https://static-exp1.licdn.com/sc/h/54ivsuv8nxk12frsw45evxn3r" alt="">
+                <span class="pl-1">78 • 26 comments</span> 
+            </span>
+            </div>
+            <!-- auto-comment-box -->
+            <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <!-- Swiper -->
+                <div class="swiper-container py-2">
+                    <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <button type="button" class="btn btn-outline-comment btn-rounded waves-effect"><span>Best of Luck...</span></button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn btn-outline-comment btn-rounded waves-effect"><span>Interesting, please...</span></button>
+                    </div>
+                    <div class="swiper-slide">
+                        <button type="button" class="btn btn-outline-comment btn-rounded waves-effect">Sharing this...</button>
+                    </div>
+                </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- like-comment-share -->
+            <div class="card-footer bg-white mt-0 p-2">
+
+            <div class="d-flex justify-content-start">
+                <div class="ref reaction btn-sm py-2">
+                    <i class="far fa-thumbs-up fa-md"></i><span class="ml-2 mediatext">Like</span>
+                </div>
+                <div class="ref reaction btn-sm py-2">
+                    <i class="far fa-comment fa-md"></i><span class="ml-2 mediatext">Comment</span>
+                </div>
+        
+                <div class="ref reaction btn-sm py-2">
+                    <i class="fas fa-share fa-md" ></i><span class="ml-2 mediatext">Share</span>
+                </div>
+                <div class="ref  reaction btn-sm py-2">
+                    <i class="fas fa-paper-plane fa-md"></i><span class="ml-2 mediatext">Send</span>
+                </div>
+            </div>
+        
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content-right-side %}
+    <!-- add-to-your-feed -->
+    <div class="card">
+        <div class="card-header bg-white border-0">
+            <span>Add to your feed</span>
+            <span><i class="fas fa-info-circle float-right"></i></span>
+        </div>
+        <div class="card-title">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3 col-3">
+                        <img
+                            src="https://jumpseller.com/images/learn/hashtag-marketing/hashtag.png"
+                            class="img-fluid rounded"
+                            style="width: 50px;"
+                            />
+                    </div>
+                    <div class="col-md-5 pl-0 col-5">
+                        <p class="header ml-1 feed-option mb-0">#jobseekers</p>
+                    </div>
+                    <div class="col-md-4 pl-0 col-4">
+                        <button
+                class="btn btn-outline-success btn-sm rounded-pill">
+                <div class="w-46">+ Follow</div>
+                </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card-title">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3 col-3">
+                        <img
+                            src="https://media-exp1.licdn.com/dms/image/C4D0BAQGfVDjt7td-Xw/company-logo_100_100/0/1519888779161?e=1620259200&v=beta&t=evmYY0Pfa_NJjaOOqanQxgt39zJ19SHWCcvi1whkwgw"
+                            class="img-fluid rounded"
+                            style="width: 50px;"
+                            />
+                    </div>
+                    <div class="col-md-5 pl-0 col-5">
+                        <p class="header ml-1 feed-option mb-0">Ibex</p>
+                        <p class="header ml-1 feed-option-desc mb-0">Company • Human Resources</p>
+                    </div>
+                    <div class="col-md-4 pl-0 col-4">
+                        <button
+                class="btn btn-outline-success btn-sm rounded-pill">
+                <div class="w-46">+ Follow</div>
+                </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-title">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3 col-3">
+                        <img
+                            src="https://media-exp1.licdn.com/dms/image/C4D0BAQG2LZ3IsVYpVA/company-logo_100_100/0/1526875003176?e=1620259200&v=beta&t=rfUjzOIjN1UmJsIF11lVm-HSzt1OwTZM6PRwidjAPXo"
+                            class="img-fluid rounded"
+                            style="width: 50px;"
+                            />
+                    </div>
+                    <div class="col-md-5 pl-0 col-5">
+                        <p class="header ml-1 feed-option mb-0">United Bank Limited</p>
+                        <p class="header ml-1 feed-option-desc mb-0">Company • Bank Sector</p>
+                    </div>
+                    <div class="col-md-4 pl-0 col-4">
+                        <button
+                class="btn btn-outline-success btn-sm rounded-pill">
+                <div class="w-46">+ Follow</div>
+                </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer pt-4 bg-white border-0 text-left font-weight-bold show-more-linkedin">
+            View all recommendations
+        </div>
+    </div>
+    <!-- today most viewed courses -->
+    <div class="card mt-2" >
+        <div class="card-header bg-white border-0">
+            <span class="most-viewed">Todays Most Viewed Courses</span
+                ><span><i class="fas fa-info-circle float-right"></i></span>
+        </div>
+        <div class="card-title pr-3 course-head">
+            <ol class="pl-4">
+                <li>
+                The Six Morning Habits of High Perf...
+                <div
+                    class="courses-title"
+                    >
+                    Pete Mocakatais | How to be blabla...
+                </div>
+                </li>
+                <li class="mt-2">
+                Unconscious Blas
+                <div
+                    class="courses-title"
+                    >
+                    Stacey Gordon
+                </div>
+                </li>
+                <li class="mt-2">
+                Critical Thinking for Better Judgme...
+                <div
+                    class="courses-title"
+                    >
+                    Becki Saltzman
+                </div>
+                </li>
+            </ol>
+        </div>
+        <div
+            class="card-footer bg-white border-0 text-center font-weight-bold show-more-linkedin"
+            >
+            Show more on Medsta learning
+        </div>
+    </div>
+
+    <!-- advertisement-image -->
+    <div class="card mt-2 text-center p-2" >
+        <img src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg" class="img-fluid" alt="">
+    </div>
+
+    <!-- footer-with-information -->
+    <div class="text-center mt-3 ml-3" style="position: sticky; top: 4rem; overflow: visible">
+        <span
+            ><a href="#" class="link mr-3"
+            >About</a
+            ></span
+            >
+        <span
+            ><a
+            href="#"
+            class="link mr-3"
+            >Newsletter</a
+            ></span
+            >
+        <span
+            ><a
+            href="#"
+            class="link"
+            >Contact Us</a
+            ></span
+            >
+        <span><a href="" class="link mr-3">Research</a></span>
+        <span
+            ><a
+            href="#"
+            class="link"
+            >Terms and Conditions</a
+            ></span
+            >
+        <span
+            ><a
+            href="#"
+            class="link"
+            >Blogs</a
+            ></span
+            >
+        <div class="text-center" style="margin-top: 10px">
+            <!--<img-->
+            <!--   class="footer-logo"-->
+            <!--   src="assets/images/logo.png"/>-->
+                <span class="fs-12">Medsta Corporation © 2021</span
+                >
+        </div>
+    </div>
+{% endblock %}

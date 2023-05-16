@@ -1,0 +1,410 @@
+{% extends 'clients/dashboard/dashboard-base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block header_cdn %}
+    <link rel="stylesheet" href="{% static 'css/social_network_styling.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/custom_js.js' %}"></script>
+{% endblock %}
+
+{% block option-2-content-left-side %}
+<div class="card">
+    <div class="card-body">
+        <div>
+            <h4><small>Manage my network</small></h4>
+            <div>
+                <ul class="list-group" style="border:none;">
+                    <li id="friend-requests-li" class="list-group-item d-flex justify-content-between align-items-center" style="border:none;">
+                        Requests
+                        <span class="badge bg-primary rounded-pill">4</span>
+                    </li>
+                    <li id="people-invited-li" class="list-group-item d-flex justify-content-between align-items-center" style="border:none;">
+                        Invitations
+                        <span class="badge bg-primary rounded-pill">1</span>
+                    </li>
+                    <li id="people-connected-li" class="list-group-item d-flex justify-content-between align-items-center" style="border:none;">
+                        Connections
+                        <span class="badge bg-primary rounded-pill">14</span>
+                    </li>
+                    <li id="people-suggeseted-li" class="list-group-item d-flex justify-content-between align-items-center active" style="border:none;">
+                        Suggestions
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" style="border:none;">
+                      Following
+                    </li>
+                  </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block option-2-content-full %}
+<div class="card">
+    <div class="card-body">
+        <div class="content">
+            <div class="container">
+                <!-- People Suggestions -->
+                <div id="div-people-suggeseted" class="row">
+                    {% for user in users %}
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4 class="text-capitalize">{{user.profile.full_name}}</h4>
+                                    <p><small class="text-muted">{{user.profile.title}}</small></p>
+                                </div>
+                                <div class="mutual-connections">
+                                    <span><i class="fa fa-chain"></i></span>
+                                    <span><small>Mutual Connections</small></span>
+                                </div>
+                                <input type="button" onclick="send_connect_request({{user.id}}, this)" value="Connect now" class="btn btn-primary btn-sm"/>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- end col -->
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4>Freddie J. Plourde</h4>
+                                    <p><small class="text-muted">Project Manager</small></p>
+                                </div>
+                                <div class="mutual-connections">
+                                    <span><i class="fa fa-chain"></i></span>
+                                    <span><small>Mutual Connections</small></span>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-sm btn-block">Connect Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4>Freddie J. Plourde</h4>
+                                    <p><small class="text-muted">Project Manager</small></p>
+                                </div>
+                                <div class="mutual-connections">
+                                    <span><i class="fa fa-chain"></i></span>
+                                    <span><small>Mutual Connections</small></span>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-sm btn-block">Connect Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4>Freddie J. Plourde</h4>
+                                    <p><small class="text-muted">Project Manager</small></p>
+                                </div>
+                                <div class="mutual-connections">
+                                    <span><i class="fa fa-chain"></i></span>
+                                    <span><small>Mutual Connections</small></span>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-sm btn-block">Connect Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4>Freddie J. Plourde</h4>
+                                    <p><small class="text-muted">Project Manager</small></p>
+                                </div>
+                                <div class="mutual-connections">
+                                    <span><i class="fa fa-chain"></i></span>
+                                    <span><small>Mutual Connections</small></span>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-sm btn-block">Connect Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4>Freddie J. Plourde</h4>
+                                    <p><small class="text-muted">Project Manager</small></p>
+                                </div>
+                                <div class="mutual-connections">
+                                    <span><i class="fa fa-chain"></i></span>
+                                    <span><small>Mutual Connections</small></span>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-sm btn-block">Connect Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+
+                <!-- Friend Requests -->
+                <div id="div-friend-requests" hidden="hidden" class="row">
+                    <div class="col-lg-12">
+                        <div class="card-box">
+                            <h4 class="m-t-0 header-title">Friend Requests</h4>
+                            <div class="p-20">
+                                <ul class="list-unstyled m-t-10">
+                                    {% for user_request in user_requests %}
+                                        <li class="media mt-2">
+                                            <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                            <div class="media-body">
+                                                <div class="float-right">
+                                                    <input type="button" id="accept-friend-request-btn-{{user_request.id}}" onclick="accept_friend_request({{user_request.id}}, this)" value="Accept" class="btn btn-primary btn-sm">
+                                                    <input type="button" id="reject-friend-request-btn-{{user_request.id}}" onclick="reject_friend_request({{user_request.id}}, this)" value="Cancel" class="btn btn-danger btn-sm">
+                                                </div>
+                                                <h5 class="mt-0 mb-1">{{user_request.reciever.profile.full_name}}</h5>
+                                                <p class="font-13 text-muted mb-2">{{user_request.reciever.profile.title}}</p>
+                                                <small class="text-muted">{{user_request.created_at}}</small>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                    <li class="media mt-3">
+                                        <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-primary btn-sm">Accept</button>
+                                                <button type="button" class="btn btn-danger btn-sm">Reject</button>
+                                            </div>
+                                            <h5 class="mt-0 mb-1">John Doe</h5>
+                                            <p class="font-13 text-muted mb-2">Lorem ipsum dolor sit amet.</p>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                    </li>
+                                    <li class="media mt-3">
+                                        <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-primary btn-sm">Accept</button>
+                                                <button type="button" class="btn btn-danger btn-sm">Reject</button>
+                                            </div>
+                                            <h5 class="mt-0 mb-1">John Doe</h5>
+                                            <p class="font-13 text-muted mb-2">Lorem ipsum dolor sit amet.</p>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                    </li>
+                                    <li class="media mt-3">
+                                        <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-primary btn-sm">Accept</button>
+                                                <button type="button" class="btn btn-danger btn-sm">Reject</button>
+                                            </div>
+                                            <h5 class="mt-0 mb-1">John Doe</h5>
+                                            <p class="font-13 text-muted mb-2">Lorem ipsum dolor sit amet.</p>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-right">
+                            <ul class="pagination pagination-split mt-0 float-right">
+                                <li class="page-item"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span> <span class="sr-only">Previous</span></a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span> <span class="sr-only">Next</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <!-- Invitations -->
+                <div id="div-invitations" hidden="hidden" class="row">
+                    <div class="col-lg-12">
+                        <div class="card-box">
+                            <h4 class="m-t-0 header-title">Invitations</h4>
+                            <div class="p-20">
+                                <ul class="list-unstyled m-t-10">
+                                    {% for invite in invites %}
+                                        <li class="media mt-2">
+                                            <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                            <div class="media-body">
+                                                <div class="float-right">
+                                                    <input type="button" onclick="cancel_connect_request({{invite.id}}, this)" value="Cancel" class="btn btn-danger btn-sm"/>
+                                                </div>
+                                                <h5 class="mt-0 mb-1">{{invite.reciever.profile.full_name}}</h5>
+                                                <p class="font-13 text-muted mb-2">{{invite.reciever.profile.title}}</p>
+                                                <small class="text-muted">{{invite.created_at}}</small>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                    <li class="media mt-2">
+                                        <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-danger btn-sm">Cancel</button>
+                                            </div>
+                                            <h5 class="mt-0 mb-1">John Doe</h5>
+                                            <p class="font-13 text-muted mb-2">Lorem ipsum dolor sit amet.</p>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                    </li>
+                                    <li class="media mt-2">
+                                        <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-danger btn-sm">Cancel</button>
+                                            </div>
+                                            <h5 class="mt-0 mb-1">John Doe</h5>
+                                            <p class="font-13 text-muted mb-2">Lorem ipsum dolor sit amet.</p>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                    </li>
+                                    <li class="media mt-2">
+                                        <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-danger btn-sm">Cancel</button>
+                                            </div>
+                                            <h5 class="mt-0 mb-1">John Doe</h5>
+                                            <p class="font-13 text-muted mb-2">Lorem ipsum dolor sit amet.</p>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                    </li>
+                                    <li class="media mt-2">
+                                        <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-danger btn-sm">Cancel</button>
+                                            </div>
+                                            <h5 class="mt-0 mb-1">John Doe</h5>
+                                            <p class="font-13 text-muted mb-2">Lorem ipsum dolor sit amet.</p>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                    </li>
+                                    <li class="media mt-2">
+                                        <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-danger btn-sm">Cancel</button>
+                                            </div>
+                                            <h5 class="mt-0 mb-1">John Doe</h5>
+                                            <p class="font-13 text-muted mb-2">Lorem ipsum dolor sit amet.</p>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                    </li>
+                                    <li class="media mt-2">
+                                        <img class="d-flex mr-3 rounded-circle" height="100" width="100" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-danger btn-sm">Cancel</button>
+                                            </div>
+                                            <h5 class="mt-0 mb-1">John Doe</h5>
+                                            <p class="font-13 text-muted mb-2">Lorem ipsum dolor sit amet.</p>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Connections -->
+                <!--  Need to know either the sender or reciever is requset.user  -->
+                <div id="div-people-connection" hidden="hidden" class="row">
+                    {% for friend in friend_connections %}
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4 class="text-capitalize">{{friend.reciever.profile.full_name}}</h4>
+                                    <p><small class="text-muted">{{friend.reciever.profile.title}}</small></p>
+                                </div>
+                                <button class="btn btn-primary btn-sm btn-block">View</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4 class="text-capitalize">Abc</h4>
+                                    <p><small class="text-muted">html</small></p>
+                                </div>
+                                <button class="btn btn-primary btn-sm btn-block">View</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4 class="text-capitalize">Abc</h4>
+                                    <p><small class="text-muted">html</small></p>
+                                </div>
+                                <button class="btn btn-primary btn-sm btn-block">View</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4 class="text-capitalize">Abc</h4>
+                                    <p><small class="text-muted">html</small></p>
+                                </div>
+                                <button class="btn btn-primary btn-sm btn-block">View</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4 class="text-capitalize">Abc</h4>
+                                    <p><small class="text-muted">html</small></p>
+                                </div>
+                                <button class="btn btn-primary btn-sm btn-block">View</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4 class="text-capitalize">Abc</h4>
+                                    <p><small class="text-muted">html</small></p>
+                                </div>
+                                <button class="btn btn-primary btn-sm btn-block">View</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+            </div>
+            <!-- container -->
+        </div>
+    </div>
+</div>
+{% endblock %}

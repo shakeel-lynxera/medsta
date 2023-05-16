@@ -1,0 +1,71 @@
+{% extends 'clients/auth/auth-base.html' %}
+{% load static %}
+
+{% block title %}Registration{% endblock %}
+{% block side_image %}
+<div class="col-lg-10">
+    <div class="row">
+        <img src="{% static 'images/medsta/auth-interface.jpg' %}" class="logo">
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="col-lg-4">
+        <div class="card2 card border-0 px-4 py-5">
+            <div class="row mb-4 px-3">
+                <h6 class="mb-4 mr-4 mt-2">User Registration</h6>
+            </div>
+            <form action="/auth/registration/" method="POST">
+                {% csrf_token %}
+                <div class="row px-3"> <label class="mb-1">
+                        <h6 class="mb-0 text-sm">Full Name</h6>
+                    </label> <input required="required" class="mb-4" type="text" name="full_name" placeholder="Enter Full Name">
+                </div>
+
+                <div class="row px-3"> <label class="mb-1">
+                        <h6 class="mb-0 text-sm">Email Address</h6>
+                    </label> <input required="required" class="mb-4" type="text" name="email" placeholder="Enter a valid email address">
+                </div>
+
+                <div class="px-3"> 
+                    <label class="mb-1">
+                        <h6 class="mb-0 text-sm">Gender</h6>
+                    </label> <br>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input required="required" value="male" type="radio" name="gender" class="form-check-input"> Male
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input required="required" value="female" type="radio" name="gender" class="form-check-input"> Female
+                        </label>
+                    </div>
+                    <div class="form-check-inline mb-4">
+                        <label class="form-check-label">
+                            <input required="required" value="other" type="radio" class="form-check-input" name="gender"> Other
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row px-3"> <label class="mb-1">
+                        <h6 class="mb-0 text-sm">Password</h6>
+                    </label> <input required="required" class="mb-4" type="password" name="password" placeholder="Enter password">
+                </div>
+
+                <div class="row px-3"> <label class="mb-1">
+                        <h6 class="mb-0 text-sm">Confirm Password</h6>
+                    </label> <input required="required" type="password" name="confirm_password" placeholder="Repeat password">
+                </div>
+
+
+                <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center rounded">Sign up</button> </div>
+            <form>
+            <div class="row mb-4 px-3"> 
+                <small class="font-weight-bold">Already have an account? 
+                    <a href="/auth/login/" class="text-danger ">Login</a>
+                </small> </div>
+        </div>
+    </div>
+{% endblock %}

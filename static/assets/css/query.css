@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+  .mb-menu {
+    background-color: white;
+    z-index: 1020;
+    height: 200px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-links ul {
+    flex-direction: row;
+  }
+  .mediatext {
+    font-size: 12px;
+  }
+  .btn-outline-comment {
+    width: 118px;
+  }
+}
+
+@media (max-width: 576px) {
+  .reaction .mediatext {
+    font-size: 11px;
+  }
+  .btn-outline-comment {
+    width: 98px;
+  }
+}

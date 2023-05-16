@@ -1,0 +1,1133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Medsta | Profile{% block title %}{% endblock %}</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+      <link rel="stylesheet" href="{% static 'assets/plugin/fontawesome/css/all.css' %}"%>
+      <!-- Google Fonts Roboto -->
+      <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"> -->
+      <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+      <!-- Material Design Bootstrap -->
+      <link rel="stylesheet" href="{% static 'assets/css/mdb.min.css' %}">
+      <!-- Your custom styles (optional) -->
+      <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/query.css' %}">
+      <script src="{% static 'js/custom_js.js' %}"></script>
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Your custom scripts (optional) -->
+      <script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+      {% block header_cdn %}{% endblock %}
+   </head>
+   <body class="body">
+
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top border navbarbg py-sm-0 py-md-0 py-2">
+         <a class="navbar-brand offset-1 ml-4" href="#"> 
+         <img src=" {% static 'assets/images/logo.png' %}" class="img-fluid" alt=""> 
+         </a>
+         <form>
+            <div class="md-form md-outline input-with-pre-icon m-0">
+               <i class="fa fa-search  input-prefix text-black pl-2"></i>
+               <input type="text" placeholder="Search" class="form-control border rounded-pill">
+            </div>
+         </form>
+         <!-- Collapse button -->
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+         aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse align-items-center navbar-links" id="basicExampleNav">
+            <ul class="navbar-nav justify-content-space-evenly ml-md-4 align-items-center mt-1 w-100">
+               <li class="nav-item active mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-home fa-lg">
+                     </i>
+                     <div class="menutext">Home</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-envelope fa-lg">
+                     </i
+                        >
+                     <div class="menutext">Mail</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="/cv/"
+                     >
+                     <i class="fas fa-id-card-alt fa-lg">
+                        </i
+                        >
+                        <div class="menutext">Create a CV</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-money-check fa-lg">
+                     </i>
+                        <div class="menutext">Book Now</div>
+                        
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-network-wired fa-lg">
+                        </i
+                        >
+                        <div class="menutext">My Network</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-briefcase fa-lg">
+                        </i
+                        >
+                        <div class="menutext">Jobs</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-comment-dots fa-lg">
+                        </i
+                        >
+                        <div class="menutext">Messaging</div>
+                  </a>
+               </li>
+               <li class="nav-item mr-2">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-bell fa-lg">
+                        </i
+                        >
+                        <div class="menutext">Notification</div>
+                  </a>
+               </li>
+               <li class="nav-item dropdown mr-3">
+                  <a class="nav-link dropdown-toggle" style="padding-top: 2px !important" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <div class="text-center">
+                        <img
+                           src="background-image: url('https://picsum.photos/800/400?random=1')"
+                           style="
+                           border-radius: 50%;
+                           width: 20px;
+                           height: 20px;
+                           "
+                           class="img-fluid"
+                           />
+                     </div>
+                     <span
+                        class="menutext">
+                     Ben
+                     </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="#">Action</a>
+                     <a class="dropdown-item" href="#">Another action</a>
+                     <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+               </li>
+               <li class="nav-item border-left">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-bars fa-lg">
+                     </i
+                        >
+                     <div class="dropdown-toggle menutext p-0 m-0" role="button" id="navbarDropdownMenuLink1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" style="font-weight: 600;">Tools</div>
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link text-center" href="#"
+                     >
+                     <i class="fas fa-cogs fa-lg">
+                        </i
+                        >
+                        <div class="menutext">Post a Job</div>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+
+      <div class="whole-body pb-3">
+         <!-- adds-content -->
+
+         {% if error %}
+         <div class="alert alert-danger alert-dismissible d-flex align-items-center fade show m-4">
+             <i class="bi-exclamation-octagon-fill"></i>
+             <strong class="mx-2">Failed!</strong> {{error}}.
+             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+         </div>
+         {% endif %}
+         
+         <div class="container-fluid py-3">
+            <div class="row justify-content-center">
+               <div class="col-lg-7 col-md-10 col-sm-10 text-center">
+                  {% block content-ads %}{% endblock %}
+               </div>
+            </div>
+         </div>
+         <div class="container-fluid">
+            <div class="row justify-content-center">
+               <div class="col-lg-8">
+                  <div class="row">
+                     <!-- side panel -->
+                     <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">    
+                                <div
+                                    class="card-header text-center"
+                                    style="
+                                    background-image: url(https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fblogs-images.forbes.com%2Falejandrocremades%2Ffiles%2F2018%2F12%2Fbusiness-3605367_1920-1200x741.jpg);
+                                    height: 200px;
+                                    "
+                                    >
+                                    <img
+                                        src="https://www.tolookgood.com/wp-content/uploads/sites/15/2017/05/botox-men-2-300x281.jpg"
+                                        class=""
+                                        style="
+                                        border-radius: 50%;
+                                        border: 2px solid white;
+                                        width: 130px;
+                                        height: 130px;
+                                        margin-top: 110px;
+                                        "
+                                        />
+                                </div>
+
+                                <div class="card-body">
+                                    <p class="card-title mt-4 header user_full_name">
+                                        <span style="color: #212529;">Shakeel Afridi</span>
+                                    </p>
+                                    <div class="view">
+                                       {% if request.user.profile.title %}
+                                       <span id="profile-title">{{request.user.profile.title}}</span>
+                                       {% else %}
+                                       <span id="static-profle-title">Add Title</span>
+                                       {% endif %}
+                                       <br>
+                                        <span id="profile-title-edit-btn" class="fa fa-edit fa-lg float-right"></span><br>
+                                        <div id="profile-title-div">
+                                          <textarea class="form-control" 
+                                          id="profile-title-input"
+                                          hidden="hidden"
+                                          rows="3"></textarea>
+                                          <button hidden="hidden" id="profile-title-save-btn" class="btn btn-sm mt-2 btn-primary">
+                                             <i id="loading-profile-title-save-btn"></i>
+                                             Save</button>
+                                             <button hidden="hidden" id="profile-title-cancel-btn" class="btn btn-sm mt-2 btn-primary">
+                                                Cancel</button>
+                                        </div>
+                                    </div>                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div
+                                    class="card-header t-b bg-white border-0"
+                                    style="font-size: 20px"
+                                    >About
+                                    <span id="profile-about-edit-btn" class="fa fa-edit float-right"></span>
+                                </div>
+                                <div class="text-justify container-fluid">
+                                    {% if request.user.profile.about %}
+                                    <p id="profile-about">{{request.user.profile.about}}</p>
+                                    {% else %}
+                                    <p id="static-profle-about" class="ml-2">Add about yourself</p>
+                                    {% endif %}
+                                    <div id="profile-about-div">
+                                      <textarea hidden="hidden" class="form-control" 
+                                      id="profile-about-input"
+                                      rows="3"></textarea>
+                                      <button hidden="hidden" id="profile-about-save-btn" class="btn btn-sm mt-2 btn-primary">
+                                         <i id="loading-profile-about-save-btn"></i>
+                                         Save</button>
+                                         <button hidden="hidden" id="profile-about-cancel-btn" class="btn btn-sm mt-2 btn-primary">
+                                          Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                     <div class="card">
+                         <div class="card-body">
+                             <div
+                                 class="card-header bg-white t-b border-0"
+                                 style="margin-bottom: -22px; font-size: 20px"
+                                 >Basic Information
+                                 <div class="float-right">
+                                    <span id="profile-basic-information-edit-btn" class="fa fa-edit ml-2"></span>
+                                    <span id="profile-basic-information-cancel-btn" hidden class="fa fa-window-close ml-2"></span>
+                                </div>
+                             </div>
+                             <div class="text-justify container-fluid">
+                              <div class="col-lg-10 col-md-12">
+                                 <div id="profile-basic-information-details" class="card-body mt-3">
+                                   <div class="row">
+                                     <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
+                                     <div class="col-sm-8">{{age}} yrs</div>
+                                   </div>
+                                   <div class="row mt-3">
+                                     <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
+                                     <div class="col-sm-8">{{request.user.email}}</div>
+                                   </div>
+                                   <div class="row mt-3">
+                                     <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
+                                     <div class="col-sm-8">{{request.user.profile.phone_number}}</div>
+                                   </div>
+                                   <div class="row mt-3">
+                                     <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
+                                     <div class="col-sm-8">{{request.user.profile.state}}, {{request.user.profile.country}}</div>
+                                   </div>
+                                 </div>
+                               </div>
+                              <div id="profile-basic-form" hidden class="p-3 py-5">
+                                 <form action="/update-profile-basic-information/" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                       <div class="col-md-6"><label class="labels">Full Name</label><input type="text" name="full_name" class="form-control" placeholder="full name" value="{{request.user.profile.full_name}}"></div>
+                                       <div class="col-md-6"><label class="labels">Phone Number</label><input name="phone_number" type="text" class="form-control" value="{{request.user.profile.phone_number}}" placeholder="phone number"></div>
+                                    </div>
+                                    <div class="row mt-3">
+                                       <div class="col-md-6"><label class="labels">Country</label><input type="text" name="country" class="form-control" placeholder="country" value="{{request.user.profile.country}}"></div>
+                                       <div class="col-md-6"><label class="labels">State/Region</label><input name="state" type="text" class="form-control" value="{{request.user.profile.state}}" placeholder="state"></div>
+                                    </div>
+                                    <div class="row mt-3">
+                                       <div class="col-md-6"><label class="labels">Date of Birth</label><input name="dob" type="date" class="form-control" value="{{request.user.profile.dob}}" placeholder="DOB"></div>
+                                    </div>
+                                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+                                 </form>
+                             </div>
+                             </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="col-md-12 mt-3">
+                        <div class="card">
+                              <div class="card-body">
+                                 <div
+                                       class="card-header t-b bg-white border-0"
+                                       style="font-size: 20px"
+                                       >Education
+                                       <span id="profile-education-edit-btn" data-toggle="modal" data-target="#add-education-form" class="fa fa-plus float-right"></span>
+                                 </div>
+                                 <div class="text-justify container-fluid">
+                                       {% if educations %}
+                                          {% for education in educations %}
+                                             <div class="row mt-3">
+                                                <div class="col-sm-4"><strong class="text-uppercase">{{education.degree}}</strong></div>
+                                                <div class="col-sm-8">{{education.institution}}</div>
+                                             </div>
+                                             <div class="row mt-3">
+                                                <div class="col-sm-4"><strong class="text-uppercase"></strong></div>
+                                                <div class="col-sm-8">
+                                                   <div class="row">
+                                                      <div class="col-sm-6">{{education.subject}}</div>
+                                                      <div class="col-sm-6">{{education.start_date}} - 
+                                                         {% if education.currently_studying %}
+                                                            Present
+                                                         {% else %}
+                                                            {{education.end_date}}
+                                                         {% endif %}
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="row mt-3">
+                                                <div class="col-sm-4"><strong class="text-uppercase"></strong></div>
+                                                <div class="col-sm-8">{{education.description}}</div>
+                                             </div>
+                                          <hr>
+
+                                          {% endfor %}
+                                       {% else %}
+                                       <p id="static-profle-education" class="ml-2">Add your education</p>
+                                       {% endif %}
+                                  </div>
+                              </div>
+                           </div>
+                        </div>
+                    
+                    <div class="col-md-12 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div
+                                    class="card-header bg-white t-b border-0"
+                                    style="margin-bottom: -22px; font-size: 20px"
+                                    >Experience
+                                    <div class="float-right">
+                                       <span data-toggle="modal" data-target="#experience-model" class="fa fa-plus ml-2"></span>
+                                   </div>
+                                </div>
+                                <div class="mt-5 text-justify container-fluid">
+                                   {% if experiences %}
+                                       {% for experience in experiences %}
+
+                                          <div class="row"> 
+                                             <div class="col-md-12 container">
+                                                <span>
+                                                   <span class="medsta-faimly-text experience-title">{{experience.title}}</span>
+                                                   <span class="float-right">
+                                                      <a href="#div-edit-experience">
+                                                         <span 
+                                                            class="fa fa-edit ml-2"
+                                                            onclick="edit_experience('{{experience.title}}', '{{experience.company}}', '{{experience.start_date}}', '{{experience.currenlty_working}}', '{{experience.end_date}}', '{{experience.location}}', '{{experience.description}}', '{{experience.id}}');">
+                                                         </span>
+                                                      </a>
+                                                   </span>
+                                                </span>
+                                                <span class="col-md-12 medsta-faimly-text experience-description"><br>
+                                                      <span>{{experience.company}}</span><br>
+                                                      <span>{{experience.start_date}} – 
+                                                         {% if experience.currenlty_working or not experience.end_date %}
+                                                         Present</span>
+                                                         {% else %}
+                                                         {{experience.end_date}}</span>
+                                                         {% endif %}
+                                                         <br>
+                                                      <span>{{experience.location}}</span><br>
+                                                      <span>{{experience.description}}</span><br>
+                                                <span>
+                                                   
+                                                </div>
+                                             </div>
+                                             <hr>
+                                          {% endfor %}
+                                       <div id="div-edit-experience" hidden class="update-div col-md-12 text-center">
+                                          <div class="mb-3">
+                                             <span>Update an experience</span>
+                                          </div>
+                                          <div class="mb-3">
+                                             <input type="text" hidden id="xp-edit-id">
+                                             <input type="text" id="xp-edit-title" class="form-control col-md-12" placeholder="title">
+                                           </div>
+                                           <div class="mb-3">
+                                             <input type="text" id="xp-edit-company" class="form-control col-md-12" placeholder="company">
+                                           </div>
+                                           <div class="mb-3 row col-md-12">
+                                              <div class="col-md-6">
+                                                 <input type="date" id="xp-edit-start-date" class="form-control" placeholder="Start Date">
+                                              </div>
+                                              <div class="col-md-6">
+                                                <input type="date" id="xp-edit-end-date" class="form-control" placeholder="End Date">
+                                             </div>
+                                           </div>
+                                           <div class="mb-3">
+                                             <input type="text" id="xp-edit-location" class="form-control col-md-12" placeholder="Location">
+                                           </div>
+                                           <div class="mb-3">
+                                             <textarea class="form-control col-md-12" rows="3" id="xp-edit-description"></textarea>
+                                           </div>
+                                             <div class="mb-3">
+                                                <button id="experience-cancel-btn" class="btn btn-sm mt-2 btn-primary">
+                                                   Cancel</button>
+                                                <button id="experience-save-btn" class="btn btn-sm mt-2 btn-primary">
+                                                   <i id="loading-experience-save-btn"></i>
+                                                   Update</button>
+                                                   <button id="experience-delete-btn" class="btn btn-sm mt-2 btn-danger">
+                                                      Delete</button>
+                                             </div>
+                                       </div>
+                                       {% else %}
+                                       <p id="static-profle-experience" class="ml-2">Add your experience</p>
+                                       {% endif %}
+                                </div>
+                            </div>
+                            <div
+                              class="card-footer discover-more show-more">
+                              Show more
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">     
+                     <div class="card">
+                         <div class="card-body">
+                             <div
+                                 class="card-header t-b bg-white border-0"
+                                 style="margin-bottom: -22px; font-size: 20px"
+                                 >Skills
+                                 <div class="float-right">
+                                       <span id="add-skill-text" class="hover-button fa fa-plus ml-2"></span>
+                                       <a id="hide-skill-text" hidden="hidden" class="hover-button">Cancel</a>
+                                       {% if skills %}
+                                          <span id="skill-edit-btn" class="fa fa-edit ml-2"></span>
+                                       {% endif %}
+                                       <span hidden id="skill-cancel-edit-btn" class="fa fa-window-close ml-2"></span>
+                                </div>
+                             </div>
+                             <div class="mt-2 text-justify container-fluid">
+                                    <form id="add-skill-form" hidden="hidden" method="POST" action="/add-skills/">
+                                       <div class="skill-main-div row mt-5">
+                                          <div class="row skill-item" style="margin-bottom: 10px">
+                                                <div class="col-8">
+                                                   <span class="float-left">
+                                                   <input class="form-control mt-0 skill-class"
+                                                         style="margin-right: 2px col-md-2" name="skills" placeholder="Add new skill" />
+                                                   </span>
+                                                   <span class="float-left ml-1">
+                                                         <select class="form-control" name="skill-rating">
+                                                            <option selected="selected" disabled="disabled">Rate you skill</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                         </select>
+                                                      </span>
+                                                </div>
+                                                <div class="col-2 float-right">
+                                                      <i onclick="removeNewSkill()" style="font-size:35px; color:red;" class="fa fa-minus-square"></i>
+                                                </div>                            
+                                          </div>
+                                       </div>
+                                    </form>
+                                 <div id="add-skill-controller" hidden="hidden" class="row col-md-4 p-0">
+                                    <span class="col-md-2 mt-1" onclick="addNewSkill()">
+                                       <i style="font-size:35px; color:green;" class="fa fa-plus-square"></i>
+                                    </span>
+                                    <span class="col-md-2 float-left">
+                                       <button type="submit" style="font-size:12px;" form="add-skill-form" class="btn btn-primary">Save</button>
+                                    </span>
+                                 </div><br>
+                                 
+
+                                 {% if skills %}
+                                    {% for skill in skills %}
+                                       <div class="row mt-2">
+                                          <div class="col-md-12 container">
+                                             <span class="float-right">
+                                                <a class="hover-button">
+                                                   <i onclick="delete_skill({{skill.id}})" hidden class="fa fa-trash text-danger skill-trash-icons"></i>
+                                                </a>
+                                             </span>
+                                             <h3 class="skill-title medsta-faimly-text"><small>{{skill.skill}}</small></h3>
+                                             <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: {{skill.rating}}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                   {{skill.rating}}%
+                                                </div>
+                                              </div>
+                                          </div>
+                                       </div>
+                                       <hr>
+                                    {% endfor %}
+                                 {% else %}
+                                    <p id="static-profle-skill" class="ml-2">Add your skill</p>
+                                 {% endif %}
+                             </div>
+                         </div>
+                         <div
+                              class="card-footer discover-more show-more">
+                              Show more
+                        </div>
+                     </div>
+                     </div>
+
+                     <div class="col-md-12 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div
+                                    class="card-header t-b bg-white border-0"
+                                    style="margin-bottom: -22px; font-size: 20px"
+                                    >Accomplishments
+                                    <div class="float-right">
+                                       <span data-toggle="modal" data-target="#accomplishment-model" class="fa fa-plus ml-2"></span>
+                                   </div>
+                                </div>
+                                <div class="mt-2 text-justify container-fluid">
+                                    {% if accomplishments %}
+                                       {% for accomplishment in accomplishments %}
+                                          <div class="row mt-5">
+                                             <div class="col-md-12 container">
+                                                <div>
+                                                   <h3 class="skill-title medsta-faimly-text"><small>{{accomplishment.title}}</small></h3>
+                                                   <a href="#div-edit-accomplishment">
+                                                      <span 
+                                                            class="fa fa-edit float-right"
+                                                            onclick="edit_accomplishment('{{accomplishment.title}}',
+                                                                                    '{{accomplishment.start_date}}',
+                                                                                    '{{accomplishment.end_date}}',
+                                                                                    '{{accomplishment.description}}',
+                                                                                    '{{accomplishment.visit_url}}',
+                                                                                    '{{accomplishment.id}}');">
+                                                      </span>
+                                                   </a>
+                                                </div>
+                                                <span class="t-b">{{accomplishment.start_date}} - {{accomplishment.end_date}}</span><br>
+                                                <span>{{accomplishment.description}}</span><br>
+                                                <span class="mt-2">  
+                                                   <a href="{{accomplishment.visit_url}}" target="_blank">
+                                                      <span>View</span>
+                                                   </a>
+                                                </span>
+                                             </div>
+                                          </div>
+                                          <hr>
+                                       {% endfor %}
+                                       <div id="div-edit-accomplishment" hidden class="update-div col-md-12 text-center">
+                                          <div class="mb-3">
+                                             <span>Update an accomplishment</span>
+                                          </div>
+                                          <div class="mb-3">
+                                             <input type="text" hidden id="accomplishment-edit-id">
+                                             <input type="text" id="accomplishment-edit-title" class="form-control col-md-12" placeholder="title">
+                                           </div>
+                                           <div class="mb-3 row col-md-12">
+                                              <div class="col-md-6">
+                                                 <input type="date" id="accomplishment-edit-start-date" class="form-control" placeholder="Start Date">
+                                              </div>
+                                              <div class="col-md-6">
+                                                <input type="date" id="accomplishment-edit-end-date" class="form-control" placeholder="End Date">
+                                             </div>
+                                           </div>
+                                           <div class="mb-3">
+                                             <input type="url" id="accomplishment-edit-visit-url" class="form-control col-md-12" placeholder="URL">
+                                           </div>
+                                           <div class="mb-3">
+                                             <textarea class="form-control col-md-12" rows="3" id="accomplishment-edit-description"></textarea>
+                                           </div>
+                                             <div class="mb-3">
+                                                <button id="accomplishment-cancel-btn" class="btn btn-sm mt-2 btn-primary">
+                                                   Cancel</button>
+                                                <button id="accomplishment-save-btn" class="btn btn-sm mt-2 btn-primary">
+                                                   <i id="loading-accomplishment-save-btn"></i>
+                                                   Update</button>
+                                                   <button id="accomplishment-delete-btn" class="btn btn-sm mt-2 btn-danger">
+                                                      Delete</button>
+                                             </div>
+                                       </div>
+                                       {% else %}
+                                       <p id="static-profle-accomplishment" class="ml-2 mt-4">Add your accomplishment</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div
+                                 class="card-footer discover-more show-more">
+                                 Show more
+                           </div>
+                        </div>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                           <div class="card">
+                               <div class="card-body">
+                                   <div
+                                       class="card-header t-b bg-white border-0"
+                                       style="margin-bottom: -22px; font-size: 20px"
+                                       >Interests
+                                       <div class="float-right">
+                                          <span id="add-interest-text" class="fa fa-plus ml-2"></span>
+                                          <a id="hide-interest-text" hidden="hidden" class="hover-button">Cancel</a>
+                                          {% if interests %}
+                                             <span id="interest-edit-btn" class="fa fa-edit ml-2"></span>
+                                          {% endif %}
+                                          <span hidden id="interest-cancel-edit-btn" class="fa fa-window-close ml-2"></span>
+                                      </div>
+                                   </div>
+
+                                   <form id="add-interest-form" hidden="hidden" method="POST" action="/add-interests/">
+                                    <div class="interest-main-div row mt-5">
+                                       <div class="row interest-item" style="margin-bottom: 10px">
+                                             <div class="col-8">
+                                                <input class="form-control mt-0 interest-class"
+                                                      style="margin-right: 2px" name="interests" placeholder="Add new interest" >
+                                             </div>
+                                             <div class="col-2 float-right">
+                                                   <i onclick="removeNewinterest()" style="font-size:35px; color:red;" class="fa fa-minus-square"></i>
+                                             </div>                            
+                                       </div>
+                                    </div>
+                                 </form>
+                                 <div id="add-interest-controller" hidden="hidden" class="row col-md-4 p-0">
+                                    <span class="col-md-2 mt-1" onclick="addNewinterest()">
+                                       <i style="font-size:35px; color:green;" class="fa fa-plus-square"></i>
+                                    </span>
+                                    <span class="col-md-2 float-left">
+                                       <button type="submit" style="font-size:12px;" form="add-interest-form" class="btn btn-primary">Save</button>
+                                    </span>
+                                 </div><br>
+                                 
+
+                                 {% if interests %}
+                                    {% for interest in interests%}
+                                       <div class="row mt-2 ml-2">
+                                          <div class="col-md-12 container">
+                                             <span class="float-right mr-3">
+                                                <a class="hover-button">
+                                                   <i hidden onclick="delete_interest({{interest.id}})" class="fa fa-trash text-danger interest-trash-icons"></i>
+                                                </a>
+                                             </span>
+                                             <h3 class="skill-title medsta-faimly-text"><small>{{interest.interest}}</small></h3>
+                                          </div>
+                                       </div>
+                                       <hr>
+                                    {% endfor %}
+                                    {% else %}
+                                       <p id="static-profle-interest" class="ml-4">Add your interest</p>
+                                 {% endif %}
+                               </div>
+                               <div
+                                    class="card-footer discover-more show-more">
+                                    Show more
+                              </div>
+                           </div>
+                        </div>
+
+
+                        <div class="col-md-12 mt-3">
+                           <div class="card">
+                               <div class="card-body">
+                                   <div
+                                       class="card-header t-b bg-white border-0"
+                                       style="margin-bottom: -22px; font-size: 20px"
+                                       >Languages
+                                       <div class="float-right">
+                                          <span id="add-language-text" class="fa fa-plus ml-2"></span>
+                                          <a id="hide-language-text" hidden="hidden" class="hover-button">Cancel</a>
+                                          <span id="language-edit-btn" class="fa fa-edit ml-2"></span>
+                                          <span hidden id="language-cancel-edit-btn" class="fa fa-window-close ml-2"></span>
+                                      </div>
+                                   </div>
+
+                                   <form id="add-language-form" hidden="hidden" method="POST" action="/add-languages/">
+                                    <div class="language-main-div row mt-5">
+                                       <div class="row language-item" style="margin-bottom: 10px">
+                                             <div class="col-8">
+                                                <input class="form-control mt-0 language-class"
+                                                      style="margin-right: 2px" name="languages" placeholder="Add new language" >
+                                             </div>
+                                             <div class="col-2 float-right">
+                                                   <i onclick="removeNewlanguage()" style="font-size:35px; color:red;" class="fa fa-minus-square"></i>
+                                             </div>                            
+                                       </div>
+                                    </div>
+                                 </form>
+                                 <div id="add-language-controller" hidden="hidden" class="row col-md-4 p-0">
+                                    <span class="col-md-2 mt-1" onclick="addNewlanguage()">
+                                       <i style="font-size:35px; color:green;" class="fa fa-plus-square"></i>
+                                    </span>
+                                    <span class="col-md-2 float-left">
+                                       <button type="submit" style="font-size:12px;" form="add-language-form" class="btn btn-primary">Save</button>
+                                    </span>
+                                 </div><br>
+                                 
+
+                                 {% if languages %}
+                                    {% for language in languages%}
+                                       <div class="row mt-2 ml-2">
+                                          <div class="col-md-12 container">
+                                             <a class="hover-button float-right mr-3">
+                                                <i hidden onclick="delete_language({{language.id}})" class="fa fa-trash text-danger language-trash-icons"></i>
+                                             </a>
+                                             <h3 class="skill-title medsta-faimly-text"><small>{{language.language}}</small></h3>
+                                          </div>
+                                       </div>
+                                       <hr>
+                                    {% endfor %}
+                                    {% else %}
+                                       <p id="static-profle-language" class="ml-3">Add your language</p>
+                                 {% endif %}
+                               </div>
+                               <div
+                                    class="card-footer discover-more show-more">
+                                    Show more
+                              </div>
+                           </div>
+                        </div>
+                    </div>
+                  </div> 
+                  <div class="col-sm-6 col-md-3 pr-0 mt-3 mt-sm-3 mt-md-0">
+                     <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div
+                                    class="card-header bg-white t-b border-0"
+                                    style="margin-bottom: -22px; font-size: 20px"
+                                    >People you may know
+                                </div>
+                                <div class="text-justify container-fluid">
+                                    <div class="row mt-5">
+                                        <div class="col-md-4">
+                                            <img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" class="img-fluid"/>
+                                        </div>
+                                        <div class="col-md-8 container">
+                                           <div>
+                                              <span class="medsta-faimly-text experience-title">Ahmad</span>
+                                           </div>
+                                           <span>Project Manager</span><br>
+                                           <span>
+                                              <button class="connect-button">Connect</button>
+                                            <span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row mt-5">
+                                       <div class="col-md-4">
+                                           <img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" class="img-fluid"/>
+                                       </div>
+                                       <div class="col-md-8 container">
+                                          <div>
+                                             <span class="medsta-faimly-text experience-title">Ahmad</span>
+                                          </div>
+                                          <span>Project Manager</span><br>
+                                          <span>
+                                             <button class="connect-button">Connect</button>
+                                           <span>
+                                       </div>
+                                   </div>
+                                   <hr>
+                                   <div class="row mt-5">
+                                    <div class="col-md-4">
+                                        <img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" class="img-fluid"/>
+                                    </div>
+                                    <div class="col-md-8 container">
+                                       <div>
+                                          <span class="medsta-faimly-text experience-title">Ahmad</span>
+                                       </div>
+                                       <span>Project Manager</span><br>
+                                       <span>
+                                          <button class="connect-button">Connect</button>
+                                        <span>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div
+                              class="card-footer discover-more show-more">
+                              Show more
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+               </div>
+            </div>
+         </div>
+      {% comment %} position-sticky {% endcomment %}
+      <nav class="bottom-chat navbar navbar-expand-xl navbar-light fixed-bottom border bg-white">
+         <a class="navbar-brand" href="#"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQFpMjVJ_N2wRQ/profile-displayphoto-shrink_100_100/0/1582787654653?e=1616630400&amp;v=beta&amp;t=C1X2NxhcN0R0GmELl1Ew7BeOoyGbwJXCw8c7lHm6XuA" class="bottom-chat-img"></a>
+         <span style="font-size: 14px; font-weight: bold; font-family:Arial, Helvetica, sans-serif;"><strong>Kamal</strong></span>
+         <div class="float-right d-flex justify-content-end w-100">
+            <span><i class="fas fa-edit fa-sm ml-3"></i></span>
+            <span><i class="fas fa-ellipsis-h fa-sm ml-3"></i></span>
+            <span><i class="fas fa-chevron-up fa-sm ml-3"></i></span>
+         </div>
+       </nav>
+
+
+       {% comment %} Dailog Forms {% endcomment %}
+
+      <div class"container">
+         <div class="modal fade" id="add-education-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Add Education</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                     <form action="/add-education/" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                           <label for="exampleInputEmail1">Institute</label>
+                           <input type="text" name="institution" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Institute">
+                        </div>
+                        <div class="form-group">
+                           <label for="exampleInputPassword1">Degree</label>
+                           <input type="text" name="degree" class="form-control" id="exampleInputPassword1" placeholder="Enter Degree e.g Bachelor's Degree">
+                        </div>
+                        <div class="form-group">
+                           <label for="exampleInputPassword1">Field of Study</label>
+                           <input type="text" name="subject" class="form-control" id="exampleInputPassword1" placeholder="Enter Field of Study e.g Bachelor of Computer Science">
+                        </div>
+                        <div class="form-group">
+                           <label for="exampleInputPassword1">Start Date</label>
+                           <input type="date" name="start_date" class="form-control" id="exampleInputPassword1" placeholder="Enter Start Date">
+                        </div>
+                        <div class="form-group">
+                           <label for="exampleInputPassword1">End Date</label>
+                           <input type="date" name="end_date" class="form-control" id="exampleInputPassword1" placeholder="Enter End Date">
+                        </div>
+                        <div class="form-group">
+                           <lable for="exampleInputPassword1">Currently Studying</lable>
+                           <div class="form-check">
+                              <input name="currently_studying" type="checkbox" class="" id="exampleCheck1">
+                              <label class="form-check-label" for="exampleCheck1">Yes</label>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label for="exampleInputPassword1">Description</label>
+                           <textarea name="description" class="form-control" id="exampleInputPassword1" placeholder="Enter Description"></textarea>
+                           <div class="modal-footer">
+                              <button type="submit" class="btn btn-primary">Save changes</button>
+                           </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>   
+
+
+
+       {% comment %} Experience Dailog Model {% endcomment %}
+       <div class="container">
+         <!-- The Modal -->
+         <div class="modal fade" id="experience-model">
+           <div class="modal-dialog">
+             <div class="modal-content">
+             
+               <!-- Modal Header -->
+               <div class="modal-header">
+                 <h4 class="modal-title">Add Experience</h4>
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               
+               <!-- Modal body -->
+               <div class="modal-body">
+                 <form action="/add-experience/" method="POST">
+                    {% csrf_token %}
+                   <div class="form-group">
+                      
+                     <label for="job-title">Job Title:</label>
+                     <input required="required" type="text" name="title" class="form-control" id="job-title">
+                     <label for="job-title mb-5">Company:</label>
+                     <input required="required" type="text" name="company" class="form-control" id="job-company">
+                     <label for="job-location">Location:</label>
+                     <input required="required" type="text" name="location" class="form-control" id="job-location">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <label for="start-date">Start Date:</label>
+                           <input required="required" name="start_date" type="date" class="form-control" id="job-start-date">
+                        </div>
+                        <div class="col-md-6">
+                           <label for="end-date">End Date:</label>
+                           <input name="end_date" type="date" class="form-control" id="job-end-date">
+                        </div>
+                     </div>
+                     <label for="currently-working">Currently Working:</label>
+                     <input name="currently_working" style="width:20px; height:20px;" type="checkbox" class="form-control ml-2" id="currently-working">
+                     <label class="mt-2" for="job-description">Job Description:</label>
+                     <textarea required="required" name="description" class="form-control" id="job-description" rows="3"></textarea>
+                     
+               </div>
+               
+               <!-- Modal footer -->
+               <div class="modal-footer">
+                 <button type="submit" class="btn btn-md btn-primary">Submit</button>
+               </div>
+            </form>
+               
+             </div>
+           </div>
+         </div>
+         
+       </div>
+
+
+      {% comment %} 
+       Accomplishments dialog {% endcomment %}
+       <div class="container">
+         <!-- The Modal -->
+         <div class="modal fade" id="accomplishment-model">
+           <div class="modal-dialog">
+             <div class="modal-content">
+             
+               <!-- Modal Header -->
+               <div class="modal-header">
+                 <h4 class="modal-title">Add Accomplishments</h4>
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               
+               <!-- Modal body -->
+               <div class="modal-body">
+                 <form action="/add-accomplishment/" method="POST">
+                    {% csrf_token %}
+                   <div class="form-group">
+                      
+                     <label for="title">Title:</label>
+                     <input required="required" type="text" name="title" class="form-control" id="title">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <label for="start-date">Start Date:</label>
+                           <input required="required" name="start_date" type="date" class="form-control" id="start-date">
+                        </div>
+                        <div class="col-md-6">
+                           <label for="end-date">End Date:</label>
+                           <input name="end_date" type="date" class="form-control" id="end-date">
+                        </div>
+                     </div>
+                     <label for="currently-working">Currently Working:</label>
+                     <input name="currently_working" style="width:20px; height:20px;" type="checkbox" class="form-control ml-2" id="currently-working">
+                     <label for="url">Visit URL:</label>
+                     <input required="required" type="text" name="visit_url" class="form-control" id="visit_url">
+                     <label class="mt-2" for="description">Description:</label>
+                     <textarea required="required" name="description" class="form-control" id="description" rows="3"></textarea>
+               </div>
+               
+               <!-- Modal footer -->
+               <div class="modal-footer">
+                 <button type="submit" class="btn btn-md btn-primary">Submit</button>
+               </div>
+            </form>
+               
+             </div>
+           </div>
+         </div>         
+       </div>
+
+      <!-- jQuery -->
+      <script type="text/javascript" src="{% static 'assets/js/jquery.min.js' %}"></script>
+      <!-- Bootstrap tooltips -->
+      <script type="text/javascript" src="{% static 'assets/js/popper.min.js' %}"></script>
+      <!-- Bootstrap core JavaScript -->
+      <script type="text/javascript" src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+      <!-- MDB core JavaScript -->
+      <script type="text/javascript" src="{% static 'assets/js/mdb.min.js' %}"></script>
+
+      <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+         <!-- Initialize Swiper -->
+      <script>
+         var swiper = new Swiper('.swiper-container', {
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 3,
+         });
+
+
+         //skills
+         var skill_counter = 1;
+         function addNewSkill() {
+            skill_counter+=1;
+            $('.skill-main-div').append('<div class="row skill-item" id style="margin-bottom: 10px">\n' +
+               '                            <div class="col-8">\n' +
+               '                             <span class="float-left">\n' +
+               '                                <input class="form-control mt-0 skill-class"\n' +
+               '                                       style="margin-right: 2px" name="skills" placeholder="Add new skill" >\n' +
+               '                             </span>\n' +
+               '                           <span class="float-left ml-1">\n' +
+               '                              <select class="form-control" name="skill-rating" >\n' +
+               '                                 <option selected="selected" disabled="disabled">Rate you skill</option>\n' +
+               '                                 <option value="1">1</option>\n' +
+               '                                 <option value="2">2</option>\n' +
+               '                                 <option value="3">3</option>\n' +
+               '                                 <option value="4">4</option>\n' +
+               '                                 <option value="5">5</option>\n' +
+               '                                 <option value="6">6</option>\n' +
+               '                                 <option value="7">7</option>\n' +
+               '                                 <option value="8">8</option>\n' +
+               '                                 <option value="9">9</option>\n' +
+               '                                 <option value="10">10</option>\n' +
+               '                              </select>\n' +
+               '                           </span>\n' +
+               '                            </div>\n' +
+               '\n' +
+               '                            <div class="col-2 float-right">\n' +
+               '                                <i onclick="removeNewSkill()" style="font-size:35px; color:red;" class="fa fa-minus-square"></i>\n' +
+               '                            </div>');
+
+               $("#count-skill-items").val(skill_counter);
+
+         }
+         function removeNewSkill() {
+            skill_counter-=1;
+            if (skill_counter <= 0) {
+               skill_counter = 1;
+               return false;
+            }
+            event.target.closest('.skill-item').remove();
+         }
+
+         
+         //interests
+         var count_interests = 1;
+         function addNewinterest() {
+            count_interests+=1;
+            $('.interest-main-div').append('<div class="row interest-item" id style="margin-bottom: 10px">\n' +
+               '                            <div class="col-8">\n' +
+               '                                <input class="form-control mt-0 interest-class"\n' +
+               '                                       style="margin-right: 2px" name="interests" placeholder="Add new interest" >\n' +
+               '                            </div>\n' +
+               '\n' +
+               '                            <div class="col-2 float-right">\n' +
+               '                                <i onclick="removeNewinterest()" style="font-size:35px; color:red;" class="fa fa-minus-square"></i>\n' +
+               '                            </div>');
+
+               $("#count-interest-items").val(count_interests);
+
+         }
+         function removeNewinterest() {
+            count_interests-=1;
+            if (count_interests <= 0) {
+               count_interests = 1;
+               return false;
+            }
+            event.target.closest('.interest-item').remove();
+         }
+
+
+
+         //languages
+         var count_languages = 1;
+         function addNewlanguage() {
+            count_languages+=1;
+            $('.language-main-div').append('<div class="row language-item" id style="margin-bottom: 10px">\n' +
+               '                            <div class="col-8">\n' +
+               '                                <input class="form-control mt-0 language-class"\n' +
+               '                                       style="margin-right: 2px" name="languages" placeholder="Add new language" >\n' +
+               '                            </div>\n' +
+               '\n' +
+               '                            <div class="col-2 float-right">\n' +
+               '                                <i onclick="removeNewlanguage()" style="font-size:35px; color:red;" class="fa fa-minus-square"></i>\n' +
+               '                            </div>');
+
+               $("#count-language-items").val(count_languages);
+
+         }
+         function removeNewlanguage() {
+            count_languages-=1;
+            if (count_languages <= 0) {
+               count_languages = 1;
+               return false;
+            }
+            event.target.closest('.language-item').remove();
+         }
+
+
+      </script>
+      
+   </body>
+</html>
